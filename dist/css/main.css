@@ -1,2 +1,47 @@
 body {
-  background: red; }
+  font-family: Open Sans, arial, sans-serif;
+  background: white;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  height: 100vh; }
+
+header {
+  background: lightgreen; }
+  header .disclaimer {
+    border: 1px grey solid;
+    text-align: center;
+    color: black; }
+    header .disclaimer a {
+      color: black; }
+  header .nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem;
+    border: 1px blue solid; }
+    header .nav-container .navigation {
+      background: lightsalmon;
+      display: flex;
+      justify-content: space-between;
+      flex-grow: 1;
+      padding: 0 5rem; }
+    header .nav-container .logo {
+      border: 1px red solid; }
+    header .nav-container .cart {
+      border: 1px red solid; }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background: lightgray;
+  border: 1px darkblue solid;
+  height: 100%;
+  border: 3px #c65bf8 solid; }
+  .main .cards-container {
+    flex-grow: 1;
+    border: 3px blue solid; }
+  .main .pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px red solid; }

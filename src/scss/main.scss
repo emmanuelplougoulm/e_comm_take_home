@@ -1,6 +1,65 @@
 // Write your CSS here
-$color: red;
+$bg-color: white;
 
 body {
-  background: $color;
+  font-family: Open Sans, arial, sans-serif;
+  background: $bg-color;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+header {
+  background: lightgreen;
+  .disclaimer {
+    border: 1px grey solid;
+    text-align: center;
+    color: black;
+    a {
+      color: black;
+    }
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem;
+    border: 1px blue solid;
+
+    .navigation {
+      background: lightsalmon;
+      display: flex;
+      justify-content: space-between;
+      flex-grow: 1;
+      padding: 0 5rem;
+    }
+
+    .logo {
+      border: 1px red solid;
+    }
+    .cart {
+      border: 1px red solid;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background: lightgray;
+  border: 1px darkblue solid;
+  height: 100%;
+  border: 3px rgb(198, 91, 248) solid;
+
+  .cards-container {
+    flex-grow: 1;
+    border: 3px blue solid;
+  }
+
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px red solid;
+  }
 }
