@@ -1,39 +1,57 @@
 body {
   font-family: Open Sans, arial, sans-serif;
-  background: white;
+  background: #f9f9f9;
   font-size: 16px;
   font-weight: 500;
   margin: 0;
   padding: 0;
   height: 100vh; }
 
-header {
-  background: lightgreen; }
-  header .disclaimer {
-    background: #1f2326;
-    padding: 0.2rem 0.8rem;
-    text-align: center;
-    color: #fff;
-    font-size: 0.8rem; }
-    header .disclaimer a {
-      color: #41ccb4;
-      cursor: pointer;
-      text-decoration: none; }
-  header .nav-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 3rem;
-    border: 1px blue solid; }
-    header .nav-container .navigation {
-      background: lightsalmon;
+header .disclaimer {
+  background: #1f2326;
+  padding: 0.2rem 0.8rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.8rem; }
+  header .disclaimer a {
+    color: #41ccb4;
+    cursor: pointer;
+    text-decoration: none; }
+
+header .nav-container {
+  padding: 1rem 3rem;
+  font-size: 0.8rem;
+  font-weight: 600; }
+  header .nav-container .row {
+    display: flex; }
+    header .nav-container .row .box-left a,
+    header .nav-container .row .cart a {
+      vertical-align: middle; }
+      header .nav-container .row .box-left a img,
+      header .nav-container .row .cart a img {
+        height: 1.5rem; }
+    header .nav-container .row .box-right {
       display: flex;
-      justify-content: space-between;
-      flex-grow: 1;
-      padding: 0 5rem; }
-    header .nav-container .logo {
-      border: 1px red solid; }
-    header .nav-container .cart {
-      border: 1px red solid; }
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%; }
+      header .nav-container .row .box-right nav {
+        width: 100%; }
+        header .nav-container .row .box-right nav ul {
+          margin: 0 1.2rem;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          list-style-type: none; }
+          header .nav-container .row .box-right nav ul .nav-item {
+            display: flex;
+            align-items: center; }
+            header .nav-container .row .box-right nav ul .nav-item .arrow {
+              margin-left: 0.5rem;
+              height: 0.6rem;
+              width: 0.6rem; }
+      header .nav-container .row .box-right .mobile-menu {
+        display: none; }
 
 .main {
   display: flex;
@@ -51,6 +69,12 @@ header {
     justify-content: center;
     border: 1px red solid; }
 
-@media screen and (max-width: 600px) {
-  .disclaimer {
-    display: none; } }
+@media screen and (max-width: 800px) {
+  .disclaimer,
+  nav {
+    display: none; }
+  .mobile-menu {
+    display: block !important; }
+    .mobile-menu img {
+      height: 1.5rem;
+      margin-left: 1.2rem; } }

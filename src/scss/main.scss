@@ -1,5 +1,5 @@
 // Write your CSS here
-$bg-color: white;
+$bg-color: #f9f9f9;
 $bg-disclaimer: #1f2326;
 
 body {
@@ -13,8 +13,6 @@ body {
 }
 
 header {
-  background: lightgreen;
-
   .disclaimer {
     background: $bg-disclaimer;
     padding: 0.2rem 0.8rem;
@@ -30,24 +28,53 @@ header {
   }
 
   .nav-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 3rem;
-    border: 1px blue solid;
-
-    .navigation {
-      background: lightsalmon;
+    padding: 1rem 3rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    .row {
       display: flex;
-      justify-content: space-between;
-      flex-grow: 1;
-      padding: 0 5rem;
-    }
+      // border: 2px blue solid;
+      .box-left,
+      .cart {
+        // border: 1px red solid;
+        a {
+          vertical-align: middle;
+          img {
+            height: 1.5rem;
+          }
+        }
+      }
 
-    .logo {
-      border: 1px red solid;
-    }
-    .cart {
-      border: 1px red solid;
+      .box-right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        // border: 3px black solid;
+        width: 100%;
+        nav {
+          width: 100%;
+          ul {
+            margin: 0 1.2rem;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            list-style-type: none;
+            // border: 1px red solid;
+            .nav-item {
+              display: flex;
+              align-items: center;
+              .arrow {
+                margin-left: 0.5rem;
+                height: 0.6rem;
+                width: 0.6rem;
+              }
+            }
+          }
+        }
+        .mobile-menu {
+          display: none;
+        }
+      }
     }
   }
 }
@@ -73,8 +100,17 @@ header {
   }
 }
 
-@media screen and (max-width: 600px) {
-  .disclaimer {
+@media screen and (max-width: 800px) {
+  .disclaimer,
+  nav {
     display: none;
+  }
+
+  .mobile-menu {
+    display: block !important;
+    img {
+      height: 1.5rem;
+      margin-left: 1.2rem;
+    }
   }
 }
