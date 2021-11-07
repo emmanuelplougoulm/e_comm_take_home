@@ -2,6 +2,7 @@ body {
   font-family: Open Sans, arial, sans-serif;
   background: white;
   font-size: 16px;
+  font-weight: 500;
   margin: 0;
   padding: 0;
   height: 100vh; }
@@ -9,11 +10,15 @@ body {
 header {
   background: lightgreen; }
   header .disclaimer {
-    border: 1px grey solid;
+    background: #1f2326;
+    padding: 0.2rem 0.8rem;
     text-align: center;
-    color: black; }
+    color: #fff;
+    font-size: 0.8rem; }
     header .disclaimer a {
-      color: black; }
+      color: #41ccb4;
+      cursor: pointer;
+      text-decoration: none; }
   header .nav-container {
     display: flex;
     justify-content: space-between;
@@ -45,3 +50,7 @@ header {
     flex-direction: row;
     justify-content: center;
     border: 1px red solid; }
+
+@media screen and (max-width: 600px) {
+  .disclaimer {
+    display: none; } }
