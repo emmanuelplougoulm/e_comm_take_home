@@ -34,22 +34,22 @@ function createCard(post) {
   var descriptionElt = document.createElement("div");
   descriptionElt.classList.add("description");
   descriptionElt.innerText = body;
-  var tagElt = document.createElement("div");
-  tagElt.classList.add("tag");
-  var tags = Array(2).fill(tagElt).forEach(function (element, index) {
-    element.textContent = title.split(" ")[2 + index];
-  });
   var tagsElt = document.createElement("div");
   tagsElt.classList.add("tags");
+  var tags = Array(2).fill(null).forEach(function (_, index) {
+    var tagElt = document.createElement("div");
+    tagElt.classList.add("tag");
+    tagElt.textContent = title.split(" ")[2 + index];
+    tagsElt.appendChild(tagElt);
+  });
   var bottomElt = document.createElement("div");
   bottomElt.classList.add("bottom");
   bottomElt.appendChild(titleElt);
-  bottomElt.appendChild(descriptionElt); // bottomElt.appendChild(tagsElt);
+  bottomElt.appendChild(descriptionElt);
+  bottomElt.appendChild(tagsElt); // console.log("bottomElt", bottomElt);
 
-  console.log("bottomElt", bottomElt);
   cardElt.appendChild(topElt);
   cardElt.appendChild(bottomElt);
   var cardContainer = document.getElementById("cards-container");
-  cardContainer.appendChild(cardElt);
-  console.log("cardContainer", cardContainer);
+  cardContainer.appendChild(cardElt); // console.log("cardContainer", cardContainer);
 }

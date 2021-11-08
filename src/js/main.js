@@ -37,31 +37,32 @@ function createCard(post) {
   descriptionElt.classList.add("description");
   descriptionElt.innerText = body;
 
-  const tagElt = document.createElement("div");
-  tagElt.classList.add("tag");
-
-  const tags = Array(2)
-    .fill(tagElt)
-    .forEach(function (element, index) {
-      element.textContent = title.split(" ")[2 + index];
-    });
-
   const tagsElt = document.createElement("div");
   tagsElt.classList.add("tags");
+
+  const tags = Array(2)
+    .fill(null)
+    .forEach(function (_, index) {
+      const tagElt = document.createElement("div");
+      tagElt.classList.add("tag");
+
+      tagElt.textContent = title.split(" ")[2 + index];
+      tagsElt.appendChild(tagElt);
+    });
 
   const bottomElt = document.createElement("div");
   bottomElt.classList.add("bottom");
 
   bottomElt.appendChild(titleElt);
   bottomElt.appendChild(descriptionElt);
-  // bottomElt.appendChild(tagsElt);
+  bottomElt.appendChild(tagsElt);
 
-  console.log("bottomElt", bottomElt);
+  // console.log("bottomElt", bottomElt);
 
   cardElt.appendChild(topElt);
   cardElt.appendChild(bottomElt);
 
   const cardContainer = document.getElementById("cards-container");
   cardContainer.appendChild(cardElt);
-  console.log("cardContainer", cardContainer);
+  // console.log("cardContainer", cardContainer);
 }
