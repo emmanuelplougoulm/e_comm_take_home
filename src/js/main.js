@@ -1,20 +1,54 @@
-const message = "Write your JavaScript in src/main.js";
-console.log(message);
+let ITEMS_PER_PAGE = 9;
+let PAGE_NUMBER = 1;
+let POSTS;
+let ACTIVE_POSTS;
 
 function fetchList() {
   fetch("https://jsonplaceholder.typicode.com/posts")
     .then((response) => response.json())
     .then((res) => {
-      console.log(res);
-      createCard(res[0]);
+      POSTS = res;
+      ACTIVE_POSTS = paginateItems(POSTS);
+      ACTIVE_POSTS.forEach(createCard);
     });
 }
 
 fetchList();
 
+function onClickPrevious() {
+  if (PAGE_NUMBER === 2) {
+    PAGE_NUMBER = 1;
+    displayCards();
+  }
+  console.log("PAGE_NUMBER", PAGE_NUMBER);
+}
+function onClickNext(event) {
+  if (PAGE_NUMBER === 1) {
+    PAGE_NUMBER = 2;
+    displayCards();
+  }
+  console.log("PAGE_NUMBER", PAGE_NUMBER);
+}
+
+function paginateItems() {
+  console.log("PAGE_NUMBER", PAGE_NUMBER);
+  console.log("ITEMS_PER_PAGE", ITEMS_PER_PAGE);
+  const offset = (PAGE_NUMBER - 1) * (ITEMS_PER_PAGE - 1);
+
+  return POSTS.slice(offset, offset + ITEMS_PER_PAGE - 1);
+}
+
+function displayCards() {
+  const cards = document.getElementsByClassName("card");
+  Array.from(cards).forEach(function (card) {
+    card.remove();
+  });
+  const newPosts = paginateItems(POSTS);
+  newPosts.forEach(createCard);
+  // console.log("cards", cards);
+}
+
 function createCard(post) {
-  console.log("createCard triggered");
-  console.log("post", post);
   const { title, body } = post;
   const cardElt = document.createElement("div");
   cardElt.classList.add("card");
@@ -29,7 +63,7 @@ function createCard(post) {
 
   const titleElt = document.createElement("div");
   titleElt.classList.add("title");
-  console.log("title", title);
+  // console.log("title", title);
 
   titleElt.innerText = title.split(" ")[0];
 
@@ -46,7 +80,7 @@ function createCard(post) {
       const tagElt = document.createElement("div");
       tagElt.classList.add("tag");
 
-      tagElt.textContent = title.split(" ")[2 + index];
+      tagElt.textContent = title.split(" ")[0 + index];
       tagsElt.appendChild(tagElt);
     });
 
