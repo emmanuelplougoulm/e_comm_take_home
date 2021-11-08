@@ -54,20 +54,58 @@ header .nav-container {
         display: none; }
 
 .main {
-  display: flex;
-  flex-direction: column;
+  padding: 1rem 3rem;
   background: lightgray;
-  border: 1px darkblue solid;
   height: 100%;
   border: 3px #c65bf8 solid; }
   .main .cards-container {
-    flex-grow: 1;
-    border: 3px blue solid; }
-  .main .pagination {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    border: 1px red solid; }
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-y: auto;
+    height: 100vh; }
+    .main .cards-container .card {
+      flex-basis: 30%;
+      display: flex;
+      flex-direction: column;
+      height: 30rem;
+      margin-bottom: 2rem; }
+      .main .cards-container .card .top {
+        height: 40%; }
+        .main .cards-container .card .top .image {
+          width: 100%;
+          height: 100%;
+          -o-object-fit: cover;
+             object-fit: cover; }
+      .main .cards-container .card .bottom {
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        justify-content: flex-start;
+        padding: 1rem; }
+        .main .cards-container .card .bottom .title {
+          font-family: arial, sans-serif;
+          font-size: 1.8rem;
+          font-weight: 500;
+          margin-bottom: 1rem; }
+        .main .cards-container .card .bottom .description {
+          font-size: 0.9rem;
+          color: #000;
+          opacity: 70%;
+          margin-bottom: 2rem; }
+        .main .cards-container .card .bottom .tags {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start; }
+          .main .cards-container .card .bottom .tags .tag {
+            padding: 0.5rem;
+            color: #41ccb4;
+            border: 1px #41ccb4 solid;
+            border-radius: 3px;
+            text-transform: capitalize; }
+        .main .cards-container .card .bottom .tags > div {
+          margin-right: 1rem; }
 
 @media screen and (max-width: 800px) {
   .disclaimer,
