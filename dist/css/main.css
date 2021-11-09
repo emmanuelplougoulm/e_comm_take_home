@@ -124,5 +124,9 @@ header .nav-container {
     .mobile-menu img {
       height: 1.5rem;
       margin-left: 1.2rem; }
-  .pagination-container {
-    display: none; } }
+  .main {
+    padding: 0.5rem; }
+    .main #cards-container {
+      flex-direction: column; }
+      .main #cards-container .card {
+        flex-basis: 100%; } }
