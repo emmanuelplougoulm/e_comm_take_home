@@ -12,6 +12,7 @@ function fetchList() {
     POSTS = res;
     ACTIVE_POSTS = paginateItems(POSTS);
     ACTIVE_POSTS.forEach(createCard);
+    createGreyCard();
   });
 }
 
@@ -48,7 +49,14 @@ function displayCards() {
     card.remove();
   });
   var newPosts = paginateItems(POSTS);
-  newPosts.forEach(createCard); // console.log("cards", cards);
+  newPosts.forEach(createCard);
+}
+
+function createGreyCard() {
+  var greyElt = document.createElement("div");
+  greyElt.classList.add("grey-card");
+  var cardContainer = document.getElementById("cards-container");
+  cardContainer.appendChild(greyElt);
 }
 
 function createCard(post) {

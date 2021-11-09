@@ -103,6 +103,10 @@ header .nav-container {
             text-transform: capitalize; }
         .main #cards-container .card .bottom .tags > div {
           margin-right: 1rem; }
+    .main #cards-container .grey-card {
+      flex-basis: 30%;
+      height: 30rem;
+      background: grey; }
   .main .pagination-container {
     display: flex;
     justify-content: center; }
