@@ -9,7 +9,6 @@ body {
   font-weight: 500;
   margin: 0;
   padding: 0;
-  height: 100vh;
 }
 
 header {
@@ -85,13 +84,11 @@ header {
   height: 100%;
   border: 3px rgb(198, 91, 248) solid;
 
-  .cards-container {
+  #cards-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    overflow-y: auto;
     // border: 1px blue solid;
-    height: 100vh;
 
     .card {
       flex-basis: 30%;
@@ -147,6 +144,30 @@ header {
         }
       }
     }
+    // .grey-card {
+    //   flex-basis: 30%;
+    //   display: flex;
+    //   flex-direction: column;
+    //   // border: 1px red solid;
+    //   height: 30rem;
+    //   margin-bottom: 2rem;
+    //   background: grey;
+    // }
+  }
+
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    .content {
+      font-size: 0.8rem;
+      width: 20%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      img {
+        height: 0.5rem;
+      }
+    }
   }
 }
 
@@ -162,5 +183,9 @@ header {
       height: 1.5rem;
       margin-left: 1.2rem;
     }
+  }
+
+  .pagination-container {
+    display: none;
   }
 }

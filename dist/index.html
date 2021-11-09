@@ -47,28 +47,17 @@
 
     <main class="main">
       
-      <div class="cards-container">
-        <div class="card">
-            <div class="top">
-              <img class='image' src="https://picsum.photos/300/200">
-            </div>
-            <div class="bottom">
-              <div class="title">Coinify</div>  
-              <div class="description"> Buy crypto securely with Coinify, using payment card or bank transfer</div>  
-              <div class="tags"> 
-                <div class="tag">defi </div>
-                <div class="tag">exchange </div>
-              </div>  
-
-            </div>  
-        </div>     
+      <div id="cards-container"></div>
+      <div class="pagination-container">
+      <div class="content">
+        <img id="left-arrow" onClick="onClickPrevious()" src="assets/cropped-previous.png">
+          <div id="page-one" onClick="onClickPrevious()">1</div>
+          <div id="page-two" onClick="onClickNext()">2</div>
+        <img id="right-arrow" onClick="onClickNext()" src="assets/cropped-next.png">
       </div>
-      
-   
-  
+      </div>
     </main>
       
-    </div>
   </body>
   <script src="js/main.js"></script>
 </html>
