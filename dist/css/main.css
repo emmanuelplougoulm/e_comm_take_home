@@ -55,8 +55,7 @@ header .nav-container {
 .main {
   padding: 1rem 3rem;
   background: lightgray;
-  height: 100%;
-  border: 3px #c65bf8 solid; }
+  height: 100%; }
   .main #cards-container {
     display: flex;
     flex-wrap: wrap;
