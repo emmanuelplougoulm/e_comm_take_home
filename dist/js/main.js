@@ -23,8 +23,6 @@ function onClickPrevious() {
     PAGE_NUMBER = 1;
     displayCards();
   }
-
-  console.log("PAGE_NUMBER", PAGE_NUMBER);
 }
 
 function onClickNext(event) {
@@ -32,13 +30,9 @@ function onClickNext(event) {
     PAGE_NUMBER = 2;
     displayCards();
   }
-
-  console.log("PAGE_NUMBER", PAGE_NUMBER);
 }
 
 function paginateItems() {
-  console.log("PAGE_NUMBER", PAGE_NUMBER);
-  console.log("ITEMS_PER_PAGE", ITEMS_PER_PAGE);
   var offset = (PAGE_NUMBER - 1) * (ITEMS_PER_PAGE - 1);
   return POSTS.slice(offset, offset + ITEMS_PER_PAGE - 1);
 }
@@ -71,8 +65,7 @@ function createCard(post) {
   topElt.classList.add("top");
   topElt.appendChild(imageElt);
   var titleElt = document.createElement("div");
-  titleElt.classList.add("title"); // console.log("title", title);
-
+  titleElt.classList.add("title");
   titleElt.innerText = title.split(" ")[0];
   var descriptionElt = document.createElement("div");
   descriptionElt.classList.add("description");
@@ -89,10 +82,9 @@ function createCard(post) {
   bottomElt.classList.add("bottom");
   bottomElt.appendChild(titleElt);
   bottomElt.appendChild(descriptionElt);
-  bottomElt.appendChild(tagsElt); // console.log("bottomElt", bottomElt);
-
+  bottomElt.appendChild(tagsElt);
   cardElt.appendChild(topElt);
   cardElt.appendChild(bottomElt);
   var cardContainer = document.getElementById("cards-container");
-  cardContainer.appendChild(cardElt); // console.log("cardContainer", cardContainer);
+  cardContainer.appendChild(cardElt);
 }

@@ -21,19 +21,15 @@ function onClickPrevious() {
     PAGE_NUMBER = 1;
     displayCards();
   }
-  console.log("PAGE_NUMBER", PAGE_NUMBER);
 }
 function onClickNext(event) {
   if (PAGE_NUMBER === 1) {
     PAGE_NUMBER = 2;
     displayCards();
   }
-  console.log("PAGE_NUMBER", PAGE_NUMBER);
 }
 
 function paginateItems() {
-  console.log("PAGE_NUMBER", PAGE_NUMBER);
-  console.log("ITEMS_PER_PAGE", ITEMS_PER_PAGE);
   const offset = (PAGE_NUMBER - 1) * (ITEMS_PER_PAGE - 1);
 
   return POSTS.slice(offset, offset + ITEMS_PER_PAGE - 1);
@@ -71,7 +67,6 @@ function createCard(post) {
 
   const titleElt = document.createElement("div");
   titleElt.classList.add("title");
-  // console.log("title", title);
 
   titleElt.innerText = title.split(" ")[0];
 
@@ -99,12 +94,9 @@ function createCard(post) {
   bottomElt.appendChild(descriptionElt);
   bottomElt.appendChild(tagsElt);
 
-  // console.log("bottomElt", bottomElt);
-
   cardElt.appendChild(topElt);
   cardElt.appendChild(bottomElt);
 
   const cardContainer = document.getElementById("cards-container");
   cardContainer.appendChild(cardElt);
-  // console.log("cardContainer", cardContainer);
 }
